@@ -26,12 +26,12 @@ void setup() {
 
   rtc.setTime(BUILD_SEC + 10, BUILD_MIN, BUILD_HOUR, BUILD_DAY, BUILD_MONTH, BUILD_YEAR);
 
-  pinMode(12, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
   power.autoCalibrate();
   power.setSleepMode(POWERDOWN_SLEEP);
-  //attachInterrupt(1, wakeup, FALLING);
-  attachInterrupt(digitalPinToInterrupt(12), wakeup, FALLING);
-
+  attachInterrupt(1, wakeup, FALLING);
+  //attachInterrupt(digitalPinToInterrupt(12), wakeup, FALLING);
+  
   // if(!display.begin(SSD1306_SWITCHCAPVCC)) {
   //   Serial.println(F("SSD1306 allocation failed"));
   //   for(;;); // Don't proceed, loop forever
